@@ -11,6 +11,7 @@ export class WeatherComponent implements OnInit {
   @Input() name: string = '';
   @Input() temperature = 0;
   @Input() status = '';
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() change = new EventEmitter<WeatherData>();
 
   constructor(private temperatureService: TemperatureService) {}

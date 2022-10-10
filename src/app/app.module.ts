@@ -3,11 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ResaltaDirective } from './directives/resalta.directive';
 import { UserComponent } from './user/user.component';
 import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, WeatherComponent],
+  declarations: [
+    AppComponent,
+    UserComponent,
+    WeatherComponent,
+    ResaltaDirective,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [
     // 1. inyectar directamente la clase
