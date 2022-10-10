@@ -1,7 +1,9 @@
 <div class="user">
   <label>Nombre:</label>
-  <p>{{ name }}</p>
+  <input type="text" [(ngModel)]="name" />
+  <!-- <p>{{ name }}</p> -->
   <label>Apellido:</label>
-  <p>{{ surname }}</p>
+  <input type="text" [(ngModel)]="surname" />
+  <!-- <p>{{ surname }}</p> -->
   <button (click)="pulsado()">Seleccionar</button>
 </div>
