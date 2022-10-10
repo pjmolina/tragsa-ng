@@ -11,5 +11,26 @@
   (seleccionado)="onSelect($event)"
 ></app-user>
 
+<app-weather
+  name="Sevilla"
+  [temperature]="20"
+  status="soleado"
+  (change)="onChange($event)"
+></app-weather>
+<app-weather
+  name="Cordoba"
+  [temperature]="25"
+  status="lluvioso"
+  (change)="onChange($event)"
+></app-weather>
+
+<div>
+  <ul>
+    <li *ngFor="let m of messages">
+      {{ m }}
+    </li>
+  </ul>
+</div>
+
 <hr />
 &copy; 2022. Sevilla
