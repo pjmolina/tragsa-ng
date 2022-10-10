@@ -1,7 +1,21 @@
 <div class="weather">
   <span class="city">{{ name }}</span>
-  <span class="temperature">{{ temperature }}ºC</span>
+  <span
+    [class.frio]="temperature < 10"
+    [class.calor]="temperature > 30"
+    class="temperature"
+    >{{ temperature }}ºC</span
+  >
   <button (click)="subirGrado()">+</button>
   <button (click)="bajarGrado()">-</button>
-  <span class="status">{{ status }}</span>
+
+  <span
+    *ngIf="status === 'lluvioso'; else bloqueSoleado"
+    class="status lluvioso"
+    >{{ status }}</span
+  >
+
+  <ng-template #bloqueSoleado>
+    <span class="status soleado">{{ status }}</span>
+  </ng-template>
 </div>
