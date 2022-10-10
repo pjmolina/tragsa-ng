@@ -1,3 +1,16 @@
 .user {
   border: 1px solid black;
+  margin: 4px;
+}
+.user {
+  p,
+  label {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  p {
+    font-weight: bold;
+    color: #08089c;
+  }
 }
