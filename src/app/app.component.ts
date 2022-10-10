@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoggerService } from './services/logger.service';
+import { TemperatureService } from './services/temperatures.service';
 import { Persona } from './user/user.component';
 import { WeatherData } from './weather/weather';
 
@@ -7,10 +9,17 @@ import { WeatherData } from './weather/weather';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular0';
   usuarioSeleccionado = '';
   messages: string[] = [];
+
+  temperaturaMedia = 0;
+
+  constructor(
+    private logger: LoggerService,
+    private temperatureService: TemperatureService
+  ) {}
 
   personas: Persona[] = [
     {
@@ -35,8 +44,16 @@ export class AppComponent {
     },
   ];
 
+  ngOnInit(): void {
+    this.update();
+  }
+  update(): void {
+    this.temperaturaMedia = this.temperatureService.meanTemperature;
+  }
+
   onSelect(persona: Persona): void {
-    console.log('Componente padre. seleccionado: ' + persona.name);
+    this.logger.info('Componente padre. seleccionado: ' + persona.name);
+
     this.usuarioSeleccionado = persona.name;
   }
 

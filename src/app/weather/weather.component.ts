@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TemperatureService } from '../services/temperatures.service';
 import { WeatherData } from './weather';
 
 @Component({
@@ -6,11 +7,22 @@ import { WeatherData } from './weather';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss'],
 })
-export class WeatherComponent {
+export class WeatherComponent implements OnInit {
   @Input() name: string = '';
   @Input() temperature = 0;
   @Input() status = '';
   @Output() change = new EventEmitter<WeatherData>();
+
+  constructor(private temperatureService: TemperatureService) {}
+
+  ngOnInit(): void {
+    const ciudad: WeatherData = {
+      name: this.name,
+      temperature: this.temperature,
+      status: this.status,
+    };
+    this.temperatureService.ciudades.push(ciudad);
+  }
 
   subirGrado(): void {
     this.temperature++;

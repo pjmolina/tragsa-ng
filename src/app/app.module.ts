@@ -8,7 +8,12 @@ import { WeatherComponent } from './weather/weather.component';
 @NgModule({
   declarations: [AppComponent, UserComponent, WeatherComponent],
   imports: [BrowserModule],
-  providers: [],
+  providers: [
+    // 1. inyectar directamente la clase
+    // LoggerService
+    // 2. inyectar otra cosa  dar gato por liebre
+    // { provide: LoggerService, useClass: LoggerService },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
