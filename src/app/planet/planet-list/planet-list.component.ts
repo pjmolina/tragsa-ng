@@ -9,6 +9,7 @@ import { PlanetService } from '../planet.service';
 })
 export class PlanetListComponent implements OnInit {
   planets: Planet[] = [];
+  searchText = '';
 
   constructor(private planetService: PlanetService) {}
 

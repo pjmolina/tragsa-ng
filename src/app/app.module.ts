@@ -9,6 +9,7 @@ import { PlanetListComponent } from './planet/planet-list/planet-list.component'
 import { UserComponent } from './user/user.component';
 import { WeatherComponent } from './weather/weather.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
+import { SearchByPipe } from './planet/search-by.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CurrencyPipe } from './pipes/currency.pipe';
     ResaltaDirective,
     PlanetListComponent,
     CurrencyPipe,
+    SearchByPipe,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [

@@ -1,4 +1,7 @@
 <div class="planet-list">
+  <div class="filter">
+    <input placeholder="escribe para buscar" [(ngModel)]="searchText" />
+  </div>
   <table>
     <thead>
       <th>Nombre</th>
@@ -8,7 +11,7 @@
       <th>Período de rotación</th>
     </thead>
     <tbody>
-      <tr *ngFor="let planet of planets">
+      <tr *ngFor="let planet of planets | searchBy: searchText">
         <td>{{ planet.name }}</td>
         <td class="r">{{ planet.population | number: "1.0-0" }}</td>
         <td>{{ planet.terrain }}</td>
