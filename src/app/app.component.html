@@ -41,4 +41,15 @@
 
 <app-planet-list></app-planet-list>
 
+<hr />
+<input [(ngModel)]="userName" />
+<input [(ngModel)]="role" />
+<button (click)="onLogin()">Login</button>
+
+<button (click)="onLogout()">Logout</button>
+
+<div>
+  {{ mensajes }}
+</div>
+
 <span appResalta>&copy; 2022. Sevilla</span>
