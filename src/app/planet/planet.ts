@@ -20,6 +20,21 @@ export interface Planet {
   url: string;
 }
 
+export interface PlanetResponse {
+  name: string;
+  rotation_period: string;
+  orbital_period: string;
+  climate: string;
+  terrain: string;
+  surface_water: string;
+  population: string;
+  residents: string[];
+  films: string[];
+  created: string;
+  edited: string;
+  url: string;
+}
+
 /**
  *
  * {

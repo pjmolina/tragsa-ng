@@ -2,13 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { DataPage, Planet } from './planet';
+import { DataPage, Planet, PlanetResponse } from './planet';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlanetService {
   constructor(private http: HttpClient) {}
+
+  getPlanet(id: number): Observable<Planet> {
+    const safeId = encodeURIComponent(id); // ' ' -> %20
+    const url = `https://swapi.dev/api/planets/${safeId}`;
+
+    return this.http
+      .get<PlanetResponse>(url, {
+        headers: {
+          accept: 'application/json',
+        },
+      })
+      .pipe(map((r) => toPlanet(r)));
+  }
 
   getPlanets(): Observable<Planet[]> {
     const url = 'https://swapi.dev/api/planets';
@@ -27,7 +40,7 @@ export class PlanetService {
   }
 }
 
-function toPlanet(r: any): Planet {
+function toPlanet(r: PlanetResponse): Planet {
   const planet: Planet = {
     name: r.name,
     rotation_period: parseInt(r.rotation_period, 10),
