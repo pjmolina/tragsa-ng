@@ -1,0 +1,26 @@
+<div class="planet-list">
+  <table>
+    <thead>
+      <th>Nombre</th>
+      <th>Poblacion</th>
+      <th>Tipo de terreno</th>
+      <th>Clima</th>
+      <th>Período de rotación</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let planet of planets">
+        <td>{{ planet.name }}</td>
+        <td>{{ planet.population }}</td>
+        <td>{{ planet.terrain }}</td>
+        <td>{{ planet.climate }}</td>
+        <td>{{ planet.rotation_period }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      {{
+        planets.length
+      }}
+      primeros planetas
+    </tfoot>
+  </table>
+</div>

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ResaltaDirective } from './directives/resalta.directive';
+import { PlanetListComponent } from './planet/planet-list/planet-list.component';
 import { UserComponent } from './user/user.component';
 import { WeatherComponent } from './weather/weather.component';
 
@@ -14,6 +15,7 @@ import { WeatherComponent } from './weather/weather.component';
     UserComponent,
     WeatherComponent,
     ResaltaDirective,
+    PlanetListComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
