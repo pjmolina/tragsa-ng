@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlanetService } from './planet/planet.service';
 import { LoggerService } from './services/logger.service';
 import { TemperatureService } from './services/temperatures.service';
 import { Persona } from './user/user.component';
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private logger: LoggerService,
-    private temperatureService: TemperatureService
+    private temperatureService: TemperatureService,
+    private planetService: PlanetService
   ) {}
 
   personas: Persona[] = [
@@ -64,5 +66,24 @@ export class AppComponent implements OnInit {
     const msg = `Ciudad: ${change.name} ${change.temperature} ºC ${change.status}`;
 
     this.messages.push(msg);
+  }
+
+  getPlanets(): void {
+    console.log('Paso 1');
+
+    this.planetService.getPlanets().subscribe({
+      next: (data) => {
+        console.log('Recibidos planetas');
+        console.log(data);
+      },
+      error: (err) => {
+        console.error(err);
+      },
+      complete: () => {
+        console.log('Observable completado');
+      },
+    });
+
+    console.log('Paso 2');
   }
 }
