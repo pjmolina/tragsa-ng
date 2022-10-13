@@ -8,6 +8,7 @@ import { ResaltaDirective } from './directives/resalta.directive';
 import { PlanetListComponent } from './planet/planet-list/planet-list.component';
 import { UserComponent } from './user/user.component';
 import { WeatherComponent } from './weather/weather.component';
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { WeatherComponent } from './weather/weather.component';
     WeatherComponent,
     ResaltaDirective,
     PlanetListComponent,
+    CurrencyPipe,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [

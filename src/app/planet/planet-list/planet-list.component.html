@@ -10,10 +10,10 @@
     <tbody>
       <tr *ngFor="let planet of planets">
         <td>{{ planet.name }}</td>
-        <td>{{ planet.population }}</td>
+        <td class="r">{{ planet.population | number: "1.0-0" }}</td>
         <td>{{ planet.terrain }}</td>
         <td>{{ planet.climate }}</td>
-        <td>{{ planet.rotation_period }}</td>
+        <td class="r">{{ planet.rotation_period | number: "1.0-0" }}</td>
       </tr>
     </tbody>
     <tfoot>
