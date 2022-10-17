@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SessionService } from './services/session.service';
+import { SessionService, User } from './services/session.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit, OnDestroy {
   userName = '';
   role = '';
   mensajes = '';
+  isAdmin = false;
 
   sub1?: Subscription;
   sub2?: Subscription;
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sub1 = this.sessionService.user$.subscribe({
       next: (data) => {
         this.mensajes += JSON.stringify(data) + ' ';
+        this.isAdmin = isAdmin(data);
       },
       error: (err) => {},
     });
@@ -52,3 +54,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sessionService.logout();
   }
 }
+
+const isAdmin = (user: User): boolean => {
+  return (user.role || '').toLowerCase() === 'admin';
+};

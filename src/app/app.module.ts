@@ -7,17 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routing';
 import { ResaltaDirective } from './directives/resalta.directive';
+import { RoleDirective } from './directives/role.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
 import { PlanetDetailComponent } from './planet/planet-detail/planet-detail.component';
 import { PlanetListComponent } from './planet/planet-list/planet-list.component';
 import { SearchByPipe } from './planet/search-by.pipe';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserComponent } from './user/user.component';
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherComponent } from './weather/weather.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     PlanetDetailComponent,
     UserListComponent,
     UserProfileComponent,
+    RoleDirective,
   ],
   imports: [
     BrowserModule,
