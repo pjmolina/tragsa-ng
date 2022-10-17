@@ -1,1 +1,20 @@
-<p>planet-detail works!</p>
+<div *ngIf="!cargando; else loader">
+  <div class="planet-detail" *ngIf="planet; else noPlanet">
+    <h1>Planeta {{ planet.name }}</h1>
+    <p>{{ planet.climate }}</p>
+    <p>{{ planet.created }}</p>
+    <p>{{ planet.edited }}</p>
+    <p>{{ planet.orbital_period }}</p>
+    <p>{{ planet.residents }}</p>
+    <p>{{ planet.rotation_period }}</p>
+  </div>
+</div>
+
+<ng-template #noPlanet>
+  No tenemos información.
+  <p *ngIf="error">ERROR: {{ error }}</p>
+</ng-template>
+
+<ng-template #loader>
+  <img class="loader" src="/assets/img/loader.gif" />
+</ng-template>
