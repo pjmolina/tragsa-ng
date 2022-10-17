@@ -1,0 +1,3 @@
+<div *ngIf="name; else noUser">{{ name }} ({{ role }})</div>
+
+<ng-template #noUser> Sin usuario conectado. </ng-template>

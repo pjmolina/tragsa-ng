@@ -13,5 +13,11 @@ export const routes: Routes = [
   { path: 'planetas', component: PlanetListComponent },
   { path: 'planetas/:id', component: PlanetDetailComponent },
   { path: 'temperaturas', component: WeatherInfoComponent },
+  {
+    path: 'almacen',
+    loadChildren: () =>
+      import('./almacen/almacen.module').then((m) => m.AlmacenModule),
+  },
+
   { path: '**', component: NotFoundComponent },
 ];

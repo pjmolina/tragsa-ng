@@ -17,6 +17,7 @@ import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherComponent } from './weather/weather.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UserListComponent } from './user-list/user-list.component';
     NotFoundComponent,
     PlanetDetailComponent,
     UserListComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
