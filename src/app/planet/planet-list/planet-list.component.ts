@@ -23,4 +23,23 @@ export class PlanetListComponent implements OnInit {
       },
     });
   }
+
+  getPlanets(): void {
+    console.log('Paso 1');
+
+    this.planetService.getPlanets().subscribe({
+      next: (data) => {
+        console.log('Recibidos planetas');
+        console.log(data);
+      },
+      error: (err) => {
+        console.error(err);
+      },
+      complete: () => {
+        console.log('Observable completado');
+      },
+    });
+
+    console.log('Paso 2');
+  }
 }

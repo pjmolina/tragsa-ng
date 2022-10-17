@@ -1,46 +1,24 @@
-<h1 appResalta="orange">Hola, bienvenidos</h1>
+<header>
+  <nav>
+    <a [routerLink]="['/inicio']">Inicio</a> |
+    <a [routerLink]="['/usuarios']">Usuarios</a> |
+    <a [routerLink]="['/temperaturas']">Temperaturas</a> |
+    <a [routerLink]="['/planetas']">Planetas</a> |
+    <a [routerLink]="['/planetas/1']">Planeta 1</a> |
+    <a [routerLink]="['/planetas/2']">Planeta 2</a> |
+    <a [routerLink]="['/pizzas']">Pizzas</a>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-<p>Usuario seleccionado: {{ usuarioSeleccionado }}</p>
+<footer>
+  <hr />
+  (c) Tragsa 2022.
+</footer>
 
-<hr />
-
-<app-user
-  *ngFor="let p of personas"
-  [name]="p.name"
-  [surname]="p.surname"
-  (seleccionado)="onSelect($event)"
-></app-user>
-
-<app-weather
-  name="Sevilla"
-  [temperature]="20"
-  status="soleado"
-  (change)="onChange($event)"
-></app-weather>
-<app-weather
-  name="Cordoba"
-  [temperature]="25"
-  status="lluvioso"
-  (change)="onChange($event)"
-></app-weather>
-
-<div>
-  <ul>
-    <li *ngFor="let m of messages">
-      {{ m }}
-    </li>
-  </ul>
-</div>
-
-<p>Temperatura media: {{ temperaturaMedia }}ºC</p>
-<button (click)="update()">Actualizar temperatura media</button>
-
-<hr />
-
-<button (click)="getPlanets()">Dame planetas</button>
-
-<app-planet-list></app-planet-list>
-
+<!--
 <hr />
 <input [(ngModel)]="userName" />
 <input [(ngModel)]="role" />
@@ -56,4 +34,4 @@ Importe: {{ 123456.789 | currency: "EUR" }} <br />
 Importe: {{ 123456.789 | currency: "USD" }}<br />
 Importe: {{ 123456.789 | currency: "YEN" }}<br />
 
-<span appResalta>&copy; 2022. Sevilla</span>
+<span appResalta>&copy; 2022. Sevilla</span> -->

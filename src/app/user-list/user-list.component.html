@@ -1,0 +1,12 @@
+<h1 appResalta="orange">Hola, bienvenidos</h1>
+
+<p>Usuario seleccionado: {{ usuarioSeleccionado }}</p>
+
+<hr />
+
+<app-user
+  *ngFor="let p of personas"
+  [name]="p.name"
+  [surname]="p.surname"
+  (seleccionado)="onSelect($event)"
+></app-user>
