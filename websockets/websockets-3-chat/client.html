@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Websocket Chat</title>
+        <script src="web-client.js" lang="javascript"></script>
+    </head>
+    <body>
+        <h1>Chat con websockets</h1>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">    
+            <button onclick="connect()">Connect</button>
+            <button onclick="disconnect()">Disconnect</button>
+        </div>
+        <br/>
+        <div></div>
+            <label>Channel</label>
+            <input type="text" id="channel" value="general"  placeholder="chanell">    
+            <label>Message</label>
+            <input type="text" id="message" placeholder="message">    
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <br/>
+        <br/>
+        <hr/>
+        <div id="board">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "websockets-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "node-client": "node node-client.js",
+    "web-client": "open client.html"
+  },
+  "author": "Pedro J. Molina",
+  "license": "ISC",
+  "dependencies": {
+    "websocket": "^1.0.32"
+  }
+}

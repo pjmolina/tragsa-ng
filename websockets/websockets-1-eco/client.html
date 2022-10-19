@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Websocket Eco</title>
+        <script src="web-client.js" lang="javascript"></script>
+    </head>
+    <body>
+        <h1>Eco con WebSockets</h1>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">    
+            <button onclick="connect()">Connect</button>
+            <button onclick="disconnect()">Disconnect</button>
+        </div>
+        <br/>
+        <br/>
+        <input type="text" id="message">
+        <button onclick="sendMessage()">Send</button>
+        <hr/>
+        <div id="board">
+        </div>
+    </body>
+</html>
