@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pricipal',
   templateUrl: './pricipal.component.html',
-  styleUrls: ['./pricipal.component.scss']
+  styleUrls: ['./pricipal.component.scss'],
 })
-export class PricipalComponent implements OnInit {
+export class PricipalComponent {
+  constructor(private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  gotoHome(): void {
+    this.router.navigate(['/inicio']);
   }
-
 }
