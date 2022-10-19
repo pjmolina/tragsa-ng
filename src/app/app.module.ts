@@ -19,6 +19,7 @@ import { UserComponent } from './user/user.component';
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherComponent } from './weather/weather.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { FibonacciComponent } from './fibonacci/fibonacci.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     UserListComponent,
     UserProfileComponent,
     RoleDirective,
+    FibonacciComponent,
   ],
   imports: [
     BrowserModule,

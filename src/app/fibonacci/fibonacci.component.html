@@ -1,0 +1,9 @@
+<div>
+  <h1>Fibonacci</h1>
+  <label for="numero">Numero de entrada:</label>
+  <input id="numero" type="number" [(ngModel)]="numero" />
+  <button (click)="calcular(numero)">Calcular</button>
+  <span *ngIf="resultado !== undefined"
+    >El resultado es: {{ resultado }}. calculado en {{ ellapsed }} ms
+  </span>
+</div>
