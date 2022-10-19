@@ -20,6 +20,7 @@ import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { WeatherComponent } from './weather/weather.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FibonacciComponent } from './fibonacci/fibonacci.component';
+import { SinoPipe } from './pipes/sino.pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FibonacciComponent } from './fibonacci/fibonacci.component';
     UserProfileComponent,
     RoleDirective,
     FibonacciComponent,
+    SinoPipe,
   ],
   imports: [
     BrowserModule,
